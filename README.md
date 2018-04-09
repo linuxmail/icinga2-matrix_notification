@@ -1,5 +1,5 @@
 # icinga2-matrix_notification
-Sent Icinga2 notifications to Matrix.org or own Matrix homeserver chat room
+Sent Icinga2 notifications to Matrix.org or own Matrix homeserver chatroom
 
 * https://matrix.org
 > An open network for secure, decentralized communication.
@@ -14,7 +14,7 @@ To send notifications from Icinga2 into a room, the following conditions are req
 
 There exists several ways for creating a Matrix user, but an easy way is to create a new user (for example "monitoring" via login in [Riot web](https://riot.im/app/)); get the access token and invite the new Matrix user into the room, which may was created for the monitoring. A good approach is to have several rooms, for example devops, sysops, web, dba .... and use the apply rule to assign the correct room with the $notification_matrix_room_id$ .
 
-The following configuration should be work in most cases :-)
+The following configuration examples should work in most cases :-)
 
 ## commands.cfg
 
