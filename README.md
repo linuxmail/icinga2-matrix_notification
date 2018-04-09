@@ -14,11 +14,11 @@ To send notifications from Icinga2 into a room, the following conditions are req
 
 There exists several ways, but an easy way is to create a new user (for example "monitoring" via login in [Riot web](https://riot.im/app/)); get the access token and invite the new Matrix user into the room, which may was created for the monitoring. A good approach is, to have several rooms, for example devops, sysops, web, dba .... and use the apply rule to assign the correct room with the $notification_matrix_room_id$ .
 
-The following configuration 
+The following configuration should be work in most cases :-)
 
 ## commands.cfg
 
- * Host Matrix NotificationCommand
+ * **Host Matrix NotificationCommand**
 
 ```
 object NotificationCommand "Host Alarm by Matrix" {
@@ -79,7 +79,7 @@ object NotificationCommand "Host Alarm by Matrix" {
     vars.notification_type = "$notification.type$"
 }
 ```
- * Service Matrix NotificationCommand
+ * **Service Matrix NotificationCommand**
 
 ```
 object NotificationCommand "Service Alarm by Matrix" {
