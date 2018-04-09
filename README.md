@@ -4,6 +4,8 @@ Sent Icinga2 notifications to Matrix.org or own Matrix homeserver chat room
 * https://matrix.org
 > An open network for secure, decentralized communication.
 
+The scripts itself are just a bad clone from the original mail notifications, which are from @sysadmama if I remember correct. The "only" difference is, that instead of creating a mail, we use curl to submit the notification into a room.
+
 To send notifications from Icinga2 into a room, the following conditions are required:
 * A matrix compatible server, e.g [matrix-synapse](https://github.com/matrix-org/synapse) or use https://matrix.org
 * An access token to get access to the Matrix server
@@ -12,7 +14,11 @@ To send notifications from Icinga2 into a room, the following conditions are req
 
 There exists several ways, but an easy way is to create a new user (for example "monitoring" via login in [Riot web](https://riot.im/app/)); get the access token and invite the new Matrix user into the room, which may was created for the monitoring. A good approach is, to have several rooms, for example devops, sysops, web, dba .... and use the apply rule to assign the correct room with the $notification_matrix_room_id$ .
 
+The following configuration 
+
 ## commands.cfg
+
+ * Host Matrix NotificationCommand
 
 ```
 object NotificationCommand "Host Alarm by Matrix" {
@@ -73,8 +79,6 @@ object NotificationCommand "Host Alarm by Matrix" {
     vars.notification_type = "$notification.type$"
 }
 ```
-
-
  * Service Matrix NotificationCommand
 
 ```
@@ -148,7 +152,7 @@ object NotificationCommand "Service Alarm by Matrix" {
     vars.notification_type = "$notification.type$"
 ```
 
-### services.cfg
+## services.cfg
 
 ```
 /**
@@ -181,7 +185,7 @@ apply Notification "Matrix service problems" to Service {
 }
 ```
 
-### templates.cfg
+## templates.cfg
 
 ```
 /**
@@ -220,3 +224,4 @@ template Notification "matrix-service-notification" {
 }
 ```
 
+Just put the both scripts into the /etc/icinga2/scripts/ folder, make them 0755 executable and try it out.
