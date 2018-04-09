@@ -6,6 +6,8 @@ Sent Icinga2 notifications to Matrix.org or own Matrix homeserver chatroom
 
 The scripts itself are just a bad clone from the original mail notifications, which are from https://github.com/sysadmama if I remember correctly. The "only" difference is -- that instead of creating a mail -- we use curl to submit the notification into a room.
 
+![example-screenshot](https://raw.githubusercontent.com/linuxmail/icinga2-matrix_notification/master/example-screenshot.png)
+
 To send notifications from Icinga2 into a room, the following conditions are required:
 * A matrix compatible server, e.g [matrix-synapse](https://github.com/matrix-org/synapse) or use https://matrix.org
 * An access token to get access to the Matrix server
