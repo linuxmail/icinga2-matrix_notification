@@ -155,4 +155,4 @@ BODY="${message}"
 \"body\": \"$BODY\",
 \"formatted_body\": \"$BODY\",
 \"format\": \"org.matrix.custom.html\"
-      }" "$MATRIXSERVER/_matrix/client/unstable/rooms/$MATRIXROOM/send/m.room.message/$MX_TXN?access_token=$MATRIXTOKEN"
+      }" "$MATRIXSERVER/_matrix/client/r0/rooms/$MATRIXROOM/send/m.room.message/$MX_TXN?access_token=$MATRIXTOKEN"
