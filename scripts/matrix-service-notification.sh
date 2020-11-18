@@ -150,7 +150,7 @@ if [ -n "$ICINGAWEB2URL" ] ; then
 fi
 
 while read line; do
-  message="${message}\t${line}"
+  message="${message}\n${line}"
 done <<< $NOTIFICATION_MESSAGE
 
 BODY="${message}"
