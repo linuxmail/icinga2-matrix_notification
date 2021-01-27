@@ -123,7 +123,7 @@ NOTIFICATION_MESSAGE=$(cat <<- EOF
 $ICON <strong>Service:</strong> $SERVICEDISPLAYNAME on $HOSTDISPLAYNAME
 is <strong>$SERVICESTATE.</strong>  <br/>
 <strong>When:</strong> $LONGDATETIME. <br/>
-<strong>Info:</strong> $SERVICENAME <br/>
+<strong>Info:</strong> $SERVICEOUTPUT <br/>
 EOF
 )
 
